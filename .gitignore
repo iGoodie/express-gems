@@ -12,6 +12,9 @@ Desktop.ini
 .directory
 *~
 
+# dev tools
+TODO
+
 # npm
 node_modules
 package-lock.json

@@ -1,11 +1,11 @@
 {
   "name": "express-gems",
-  "version": "0.0.0",
   "description": "Gems of Express Backend Servers",
+  "version": "0.0.0",
+  "author": "iGoodie <igoodie@programmer.net>",
+  "license": "MIT",
+  "repository": "github:iGoodie/express-gems",
   "main": "main.js",
-  "scripts": {
-    "tests": "mocha"
-  },
   "engines": {
     "node": ">=0.10.0"
   },
@@ -14,7 +14,10 @@
     "express": "^4.16.4",
     "mysql": "^2.16.0"
   },
-  "devDependencies": {},
-  "author": "iGoodie",
-  "license": "MIT"
+  "devDependencies": {
+    "mocha": "^6.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
 }
