@@ -1,6 +1,6 @@
 {
   "name": "express-gems",
-  "description": "Gems of Express Backend Servers",
+  "description": "Encapsulated goodies for express-centered backend sources",
   "version": "0.0.0",
   "author": "iGoodie <igoodie@programmer.net>",
   "license": "MIT",
@@ -12,11 +12,16 @@
   "dependencies": {
     "async": "^2.6.2",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "express-validator": "^5.3.1"
   },
   "devDependencies": {
     "mocha": "^6.0.1"
   },
+  "files": [
+    "lib/",
+    "main.js"
+  ],
   "scripts": {
     "test": "mocha"
   }

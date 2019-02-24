@@ -4,6 +4,7 @@ const assert = require('assert'),
 describe('expressGems', () => {
     it('should return subpackages and express', () => {
         assert.strictEqual(expressGems, require('express'))
+        assert.strictEqual(typeof expressGems.Router, 'function')
         assert.strictEqual(typeof expressGems.gemMySQL, 'object')
     })
 })
