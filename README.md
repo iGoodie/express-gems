@@ -76,12 +76,12 @@ app.all('/some-endpoint', [ ... ], (req, res, next) => {
 ```json
 {
     "checkedField1": [
-        { code:'SOME_ERROR_CODE', arg1:'SOME_ARG' },
-        { code:'SOME_ERROR_CODE', arg2:'SOME_ARG' },
+        { "code":"SOME_ERROR_CODE", "arg1":"SOME_ARG" },
+        { "code":"SOME_ERROR_CODE", "arg1":"SOME_ARG" },
     ],
     "checkedField2": [
-        { code:'SOME_ERROR_CODE', arg1:'SOME_ARG' },
-        { code:'SOME_ERROR_CODE', arg2:'SOME_ARG' },
+        { "code":"SOME_ERROR_CODE", "arg1":"SOME_ARG" },
+        { "code":"SOME_ERROR_CODE", "arg1":"SOME_ARG" },
     ],
     ...
 }
