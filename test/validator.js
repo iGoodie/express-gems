@@ -63,6 +63,7 @@ let chains = gemValidator.backpropagate([
     body('isUppercaseTest').exists().isUppercase(),
     body('isVariableWidthTest').exists().isVariableWidth(),
     body('isWhitelistedTest').exists().isWhitelisted('abcdefABCDEF'),
+    body('isWhitelistedTest2').exists().not().isWhitelisted('abcdefABCDEF'),
 ])
 
 let _dummy_body = {
@@ -123,6 +124,7 @@ let _dummy_body = {
     isUppercaseTest: 'brown fox jumps over lazy dog',
     isVariableWidthTest: 'aaa',
     isWhitelistedTest: 'Anything except [a-fA-F]',
+    isWhitelistedTest2: 'a',
 }
 
 let _dummy_req = { body: _dummy_body }
