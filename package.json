@@ -1,7 +1,7 @@
 {
   "name": "express-gems",
   "description": "Encapsulated goodies for express-centered backend sources",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "iGoodie <igoodie@programmer.net>",
   "license": "MIT",
   "repository": "github:iGoodie/express-gems",
@@ -21,6 +21,12 @@
   "files": [
     "lib/",
     "main.js"
+  ],
+  "keywords": [
+    "express",
+    "backend",
+    "utility",
+    "gems"
   ],
   "scripts": {
     "test": "mocha"

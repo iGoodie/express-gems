@@ -89,20 +89,20 @@ app.all('/some-endpoint', [ ... ], (req, res, next) => {
 }
 ```
 
-### .backpropagate(chains, errorTable?)
-Backpropagates given `chains` array and fills them with appropriate error messages. (Helps you in cases you do not want to repeat same `withMessage(MSG)` statements)
+### .fillWithMessages(chains, errorTable?)
+Traverses given `chains` array and fills them with appropriate error messages. (Helps you in cases you do not want to repeat same `withMessage(MSG)` statements)
 ```javascript
 const gemValidator = require('express-gems').gemValidator
 const { check, body } = require('express-validator/check')
 
 // With built-in standard messages
-const validationRules = gemValidator.backpropagate([
+const validationRules = gemValidator.fillWithMessages([
     check('foo').exists().isInt({ min: 5 }),
     body('bar').optional().isLength({ max: 20 })
 ])
 
 // With custom message builder table
-const validationRules = gemValidator.backpropagate([
+const validationRules = gemValidator.fillWithMessages([
     check('foo').exists().isInt({ min: 5 }),
     body('bar').optional().isLength({ max: 20 })
 ], {
@@ -111,7 +111,7 @@ const validationRules = gemValidator.backpropagate([
 })
 
 // CAUTION: Please note that while using builder table
-const validationRules = gemValidator.backpropagate([
+const validationRules = gemValidator.fillWithMessages([
     check('latlongfield').exists().isLatLong()
 ], {
     // isLatLong check is mapped into "_default"

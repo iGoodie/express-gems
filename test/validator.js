@@ -2,7 +2,7 @@ const async = require('async'),
     { body } = require('express-validator/check'),
     gemValidator = require('../main').gemValidator
 
-let chains = gemValidator.backpropagate([
+let chains = gemValidator.fillWithMessages([
     body('existsTest').exists(),
     body('intTest').exists().isInt({ min: 5 }),
     body('floatTest').exists().isFloat({ max: 5.23 }),
@@ -133,7 +133,7 @@ let _dummy_res = {}
 describe('gemValidator', () => {
     describe('.errors', () => {
         it('should generate readible response object', (done) => {
-            let chain = gemValidator.backpropagate([body('foo').isInt()])[0]
+            let chain = gemValidator.fillWithMessages([body('foo').isInt()])[0]
             chain(_dummy_req, _dummy_res, () => {
                 let errors = gemValidator.errors(_dummy_req)
                 if (typeof errors != 'object') return done(new Error('not object'))
@@ -144,8 +144,8 @@ describe('gemValidator', () => {
         })
     })
 
-    describe('.backpropagate', () => {
-        it('should backpropagate each chain and generate message', (done) => {
+    describe('.fillWithMessages', () => {
+        it('should fillWithMessages each chain and generate message', (done) => {
             for (let i = 0; i < chains.length; i++) {
                 let chain = chains[i]
                 for (let j = 0; j < chain._context.validators.length; j++) {
@@ -158,7 +158,7 @@ describe('gemValidator', () => {
             return done()
         })
 
-        it('should backpropagate with proper error formats', (done) => {
+        it('should fillWithMessages with proper error formats', (done) => {
             async.each(chains, function simulateExpressMiddleware(chain, callback) {
                 chain(_dummy_req, _dummy_res, callback)
             }, function () {
