@@ -1,4 +1,6 @@
 # 💎 express-gems
+[![NPM](https://nodei.co/npm/express-gems.png?downloads=true&downloadRank=true)](https://nodei.co/npm/express-gems/)
+
 Encapsulated express related libraries for external utilities. 
 
 It's named "gems", but it has nothing to do with Ruby programming language, believe me. It is just a programmer trying to name things 🤷
@@ -29,7 +31,7 @@ const gemMySQL = require('express-gems').gemMySQL
 
 let options = { /* ... */ }
 
-gemMySQL.createPool({ options }, (err, pool) => {
+gemMySQL.createPool(options, (err, pool) => {
     if (err) console.log('Error connecting to the DB.')
     // Tadaa! Connection established and pool is created successfully
 })

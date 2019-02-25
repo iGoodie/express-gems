@@ -25,7 +25,7 @@ let chains = gemValidator.backpropagate([
     body('isCreditCardTest').exists().isCreditCard(),
     body('isCurrencyTest').exists().isCurrency({ symbol: '₺', require_symbol: false }),
     body('isDataURITest').exists().isDataURI(),
-    body('isMagnetURITest').exists().isMagnetURI(), // Doesn't exist in express-validator
+    body('isMagnetURITest').exists().isMagnetURI(),
     body('isDecimalTest').exists().isDecimal({ force_decimal: true, locale: 'tr-TR' }),
     body('isDivisibleByTest').exists().isDivisibleBy(34),
     body('isEmptyTest').exists().isEmpty(),
@@ -35,14 +35,14 @@ let chains = gemValidator.backpropagate([
     body('isHashTest').exists().isHash('sha256'),
     body('isHexColorTest').exists().isHexColor(),
     body('isHexadecimalTest').exists().isHexadecimal(),
-    body('isIdentityCardTest').exists().isIdentityCard('any'), // Doesn't exist in express-validator
+    body('isIdentityCardTest').exists().isIdentityCard('any'),
     body('isIPTest').exists().isIP(6),
     body('isIPRangeTest').exists().isIPRange(),
     body('isISBNTest').exists().isISBN(10),
     body('isISSNTest').exists().isISSN({ case_sensitive: false }),
     body('isISINTest').exists().isISIN(),
     body('isISO8601Test').exists().isISO8601(),
-    body('isRFC3339Test').exists().isRFC3339(), // Doesn't exist in express-validator
+    body('isRFC3339Test').exists().isRFC3339(),
     body('isISO31661Alpha2Test').exists().isISO31661Alpha2(),
     body('isISO31661Alpha3Test').exists().isISO31661Alpha3(),
     body('isISRCTest').exists().isISRC(),
